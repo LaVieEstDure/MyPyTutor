@@ -2,6 +2,10 @@
 from __future__ import print_function
 import sys
 from argparse import ArgumentParser
+import ctypes
+
+if hasattr(ctypes, 'windll'):
+    ctypes.windll.shcore.SetProcessDpiAwareness(1)
 
 ALLOWED_VERSIONS = [(3,6)]  #[(3, 5), (3, 4)]
 
